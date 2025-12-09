@@ -1,0 +1,16 @@
+SELECT * FROM customers LIMIT 30;
+
+    c.customer_id AS Customer,
+    c.age AS Age,
+    i.item_name AS Item,
+    SUM(COALESCE(i.quantity, 0)) AS Quantity
+FROM customers c
+JOIN orders o
+    ON c.customer_id = o.customer_id
+JOIN order_items i
+    ON o.order_id = i.order_id
+WHERE c.age BETWEEN 18 AND 35
+GROUP BY c.customer_id, c.age, i.item_name
+HAVING SUM(COALESCE(i.quantity, 0)) > 0
+ORDER BY c.customer_id;
+
