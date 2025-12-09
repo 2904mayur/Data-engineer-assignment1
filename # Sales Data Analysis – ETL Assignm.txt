@@ -1,0 +1,32 @@
+# Sales Data Analysis – ETL Assignment
+
+## Overview
+This project analyzes sales data from a SQLite database to identify total quantities
+of items purchased by customers aged between 18 and 35.
+
+Two approaches are implemented:
+1. SQL-based aggregation using SQLite
+2. Pandas-based aggregation using Python
+
+## Data Source
+- SQLite database provided as part of the assignment
+
+## Output
+- CSV files with semicolon (;) as delimiter
+- Columns: Customer, Age, Item, Quantity
+- Items with zero total quantity are excluded
+
+## Tools Used
+- Python
+- SQLite
+- Pandas
+
+
+xyz-assignment/
+│
+ README.md
+ sql_solution.py
+ pandas_solution.py
+ output_sql.csv
+ output_pandas.csv
+
